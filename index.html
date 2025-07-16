@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gutendex Book App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Book Explorer</h1>
+      <ul>
+        <li><a href="#" id="nav-home">Home</a></li>
+        <li><a href="#" id="nav-wishlist">Wishlist</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="controls">
+      <input type="text" id="searchInput" placeholder="Search by title..." />
+      <select id="genreFilter">
+        <option value="">All Genres</option>
+      </select>
+    </section>
+
+    <div id="loader" class="loader hidden"></div>
+    <section id="book-list"></section>
+    <div id="pagination"></div>
+    <section id="wishlist-page" class="hidden"></section>
+    <section id="book-detail-page" class="hidden"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

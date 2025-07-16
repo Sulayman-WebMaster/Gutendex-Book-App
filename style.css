@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+header nav {
+  background: #4a90e2;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e3f2fd;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+#controls input,
+#controls select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+#book-list,
+#wishlist-page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.book {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+}
+
+.book img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.book h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  height: 2.4em;
+  overflow: hidden;
+}
+
+.book p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.book button {
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 5px;
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.book button:hover {
+  background: #3a77c0;
+}
+
+.heart {
+  font-size: 1.3rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.heart.wishlisted {
+  color: crimson;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+#pagination button {
+  padding: 0.4rem 0.8rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#pagination button:hover {
+  background: #eee;
+}
+
+#book-detail-page {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+#book-detail-page h2 {
+  margin-bottom: 1rem;
+}
+
+#book-detail-page a,
+#book-detail-page button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Loader animation */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.loader::after {
+  content: '';
+  width: 32px;
+  height: 32px;
+  border: 4px solid #4a90e2;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  #book-list,
+  #wishlist-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #book-list,
+  #wishlist-page {
+    grid-template-columns: 1fr;
+  }
+
+  #controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}
